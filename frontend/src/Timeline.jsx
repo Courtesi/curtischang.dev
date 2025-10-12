@@ -97,9 +97,9 @@ export default function Timeline() {
                     </div>
                     <div className="flex flex-col gap-10 ml-8 lg:ml-0 lg:p-10 scale-90 sm:scale-100 w-40 lg:w-75">
                         <div className="border-b pb-3 mt-5 border-dotted text-center text-gray-800 text-font-bold text-2xl lg:text-4xl drop-shadow-xl">Curtis Chang</div>
-                        <div className="lg:mt-5 border-b pb-3 border-dotted text-center drop-shadow-xl">Software Developer</div>
+                        <div className="lg:mt-5 border-b pb-3 border-dotted text-center drop-shadow-xl">Software Engineer - Cybersecurity Enthusiast</div>
                         <div className="border-b pb-3 border-dotted text-center drop-shadow-xl">
-                            <ClipboardCopy copyText={"curtischang@wenslo.me"}/>
+                            <ClipboardCopy copyText={"hello@curtischang.dev"}/>
                         </div>                        
                     </div>
                     
@@ -119,11 +119,9 @@ export default function Timeline() {
                         </div>
                         <div className="flex gap-5 justify-end mt-10">
                             <div className="border-r pr-3 flex items-center">
-                                {/* <a className="text-blue-800 hover:text-blue-600" target="_blank" href="https://github.com/Courtesi">GitHub</a> */}
                                 <a target="_blank" href="https://github.com/Courtesi"><img src={GitHub} className="w-8 hover:scale-120 duration-300"/></a>
                             </div>
                             <div className="border-r pr-5">
-                                {/* <a className="text-blue-800 hover:text-blue-600" target="_blank" href="https://www.linkedin.com/in/changcurtis/">LinkedIn</a> */}
                                 <a target="_blank" href="https://www.linkedin.com/in/changcurtis/"><img src={LinkedIn} className="w-8 hover:scale-120 duration-300"/></a>
                             </div>
                             <div className="">
@@ -145,13 +143,12 @@ export default function Timeline() {
                                     element.buttonText !== "";
                                 return (
                                     <VerticalTimelineElement
-                                        // contentArrowStyle={ {contentStyle: "#E6E7D9"} }
                                         contentStyle={{background: "#E6E7D9"}}
                                         key={element.id}
                                         date={element.date}
                                         dateClassName="date"
                                         iconStyle={{background: "#DBD9D1"}}
-                                        icon = {isWorkIcon ? <WorkIcon className="rounded-full sm:scale-175 lg:scale-250"/> : <SchoolIcon className="max-w-full rounded-full sm:scale-175 lg:scale-250"/>}
+                                        icon = {isWorkIcon ? <WorkIcon className="rounded-full sm:scale-175 lg:scale-290"/> : <SchoolIcon className="max-w-full rounded-full sm:scale-175 lg:scale-290"/>}
                                     >
 
                                         <h3 className="font-bold text-lg">
