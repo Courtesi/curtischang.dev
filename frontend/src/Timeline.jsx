@@ -12,11 +12,10 @@ import ClipboardCopy from "./ClipBoardCopy";
 
 import WorkIcon from "./assets/work.svg?react";
 import SchoolIcon from "./assets/school.svg?react";
-import WebIcon from "./assets/web_icon.svg?react";
 import GitHub from './images/github.png';
 import LinkedIn from './images/linkedin.png';
 import Resume from './images/resume.png';
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 
 function sortProjects(projects) {
     const filtered = projects.filter(element => element.description.includes("Featured:")).map(element => ({...element, description: element.description.slice(10)}));
@@ -55,18 +54,16 @@ export default function Timeline() {
         fetch('/api/projects')
             .then(response => response.json())
             .then(data => {
-                const temp = sortProjects(data);
-                setProjects(temp);
+                setProjects(sortProjects(data));
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Error fetching projects:', error);
                 setLoading(false);
             })
     }, []);
 
-    // if (loading) {
-    //     return <p>Loading...</p>;
-    // }
-
     const testing = projects;
-    console.log("whatever" + testing.length);
     // let workIconStyles = {background: "#06d6a0"};
     // let schoolIconStyles = {background: "#f9c74f"};
     const colors = {
@@ -85,14 +82,12 @@ export default function Timeline() {
         "C": "bg-yellow-300"
     };
 
-    // console.log(colors["JavaScript"]);
-
     return (
         
-        <div className="flex flex-col lg:flex-row">
-            <div id = "left-screen" className="items-center p-0 lg:p-20 border-b lg:border-r lg:border-b-0 border-blue-800">
-                <div className="p-20 lg:p-0 items-center lg:mt-30 lg:place-items-center justify-center flex flex-row lg:flex-col text-3vh">
-                    <div className="w-60 lg:w-55">
+        <div className="flex flex-col lg:flex-row h-screen">
+            <div id = "left-screen" className="items-center p-0 lg:p-20 border-b lg:border-r lg:border-b-0 border-blue-800 lg:h-screen lg:overflow-hidden flex flex-col justify-center">
+                <div className="p-20 lg:p-0 items-center lg:place-items-center justify-center flex flex-row lg:flex-col max-h-full">
+                    <div className="w-3/4 lg:w-2/3 max-w-xs">
                         <img src={ProfilePhoto} className="rounded-full drop-shadow-2xl scale-150 sm:scale-100"/>
                     </div>
                     <div className="flex flex-col gap-10 ml-8 lg:ml-0 lg:p-10 scale-90 sm:scale-100 w-40 lg:w-75">
@@ -106,7 +101,7 @@ export default function Timeline() {
                 </div>
             </div>
             
-            <div id = "right-screen" className="bg-sky-500 lg:max-h-screen lg:sticky lg:top-0 lg:overflow-y-auto place-items-center flex justify-center lg:block">
+            <div id = "right-screen" className="lg:max-h-screen lg:sticky lg:top-0 lg:overflow-y-auto place-items-center flex justify-center lg:block">
                 <div className="w-7/10 mt-20">
                     <div className="border-b pb-10 border-slate-900 max-w-full">
                         <div className="items-center justify-center">
@@ -171,13 +166,18 @@ export default function Timeline() {
                         <div>
                             <h2 className="text-3xl font-bold mb-4">Featured Projects</h2>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3">
-                            {testing.map((element) => {
+                        {loading ? (
+                            <div className="flex justify-center items-center py-20">
+                                <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-gray-900"></div>
+                            </div>
+                        ) : (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3">
+                                {testing.map((element) => {
                                 return (
                                     <a key={element.name} className="" target="_blank" href={`${element.html_url}`}>
                                         <div className="m-5 p-10 border rounded-lg bg-stone-200 hover:shadow-2xl hover:opacity-75 hover:scale-110 duration-300">
                                             
-                                            <div className="text-xl lg:text-3xl xl:text-xl border-b flex items-center justify-center">
+                                            <div className="text-lg lg:text-2xl xl:text-xl border-b flex items-center justify-center">
                                                 <div className="flex">
                                                     {element.name}
                                                 </div>
@@ -213,7 +213,8 @@ export default function Timeline() {
                                     </a>
                                 );
                             })}
-                        </div>
+                            </div>
+                        )}
                     </div>
 
                     <div>
@@ -223,59 +224,6 @@ export default function Timeline() {
                     </div>
                 </div>
             </div>
-                
-            
         </div>
-        
-        // <div>
-        //     {timelineElements.map((element) => {
-        //         const colors = [
-        //             "bg-red-500",
-        //             "bg-blue-500",
-        //             "bg-yellow-500",
-        //             "bg-purple-500",
-        //             "bg-orange-500"
-        //         ]
-
-        //         const color = defaultColor || `bg-${element.color}-500`;
-
-        //         return (
-        //         <div key={element.id} className="flex m-4 relative">
-        //             <div className={`${color} w-0.5 h-6 translate-x-20 translate-y-56 opacity-60 sm:hidden`}></div>
-        //             <div className={`${color} w-0.5 h-6 translate-x-80 translate-y-56 opacity-60 sm:hidden`}></div>
-        //             <div className="hidden items-start w-44 pt-0.5 relative sm:flex">
-        //                 <div className="w-4/5 text-gray-500">{element.date}</div>
-        //                 <div className={`${color} w-px h-full translate-x-5 translate-y-10 opacity-30`}></div>
-        //                 <img 
-        //                 src={element.icon === "school" ? schoolIcon : workIcon} 
-        //                 alt="icon" 
-        //                 className={`${color} w-10 p-1 rounded-lg z-20`}/>
-        //                 <div className={`${color} h-px w-8 translate-y-5 opacity-30`}></div>
-        //             </div>
-        //             <div className="border border-gray-600 rounded-lg px-8 py-4 bg-gray-800 w-full text-center z-10 sm:w-96">
-        //                 <div className="text-xl font-medium">
-        //                     {element.title}
-        //                 </div>
-        //                 <div className="text-gray-300 mb-6 sm:mb-8 sm:text-xs">
-        //                     {element.location} <span className="sm:hidden">| {element.date}</span>
-        //                 </div>
-        //                 <div className="mb-4 text-left">
-        //                     {element.description}
-        //                 </div>
-        //                 <div className="flex flex-wrap mb-6 justify-center">
-        //                     {element.tech.map((tech, index) => {
-        //                         return <span key={index} className="bg-gray-900 rounded-xl px-2 py-1 text-sm m-1">{tech}</span>
-        //                     })}
-        //                 </div>
-        //                 <img 
-        //                 src={element.icon === "school" ? schoolIcon : workIcon} 
-        //                 alt="icon" 
-        //                 className={`${color} w-8 p-1 rounded-lg z-20 absolute left-4 top-4 sm:hidden`}/>
-        //                 <a className={`${color} text-gray-950 font-medium px-4 py-1 rounded-md mx-auto cursor-pointer hover:text-white`}>{element.buttonText}</a>
-        //             </div>
-        //         </div>
-        //         );
-        //     })}
-        // </div>
     );
 }

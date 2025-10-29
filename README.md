@@ -1,3 +1,3 @@
-# wenslo.me
+# curtischang.dev
 
-Fullstack application for wenslo.me with a React frontend, Spring Boot backend, packaged as a docker container.
+Fullstack application for curtischang.dev with a React frontend, Spring Boot backend, containerized with docker compose.
