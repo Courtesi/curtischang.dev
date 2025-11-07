@@ -1,3 +1,3 @@
 # curtischang.dev
 
-Fullstack application for curtischang.dev with a React frontend, Spring Boot backend, containerized with docker compose.
+Full stack application for curtischang.dev with a React frontend, Spring Boot backend, containerized with docker compose.
