@@ -174,9 +174,10 @@ export default function Timeline() {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3">
                                 {testing.map((element) => {
                                 return (
-                                    <a key={element.name} className="" target="_blank" href={`${element.html_url}`}>
+                                    <div key={element.name} className="" >
+                                        <a className="" target="_blank" href={`${element.html_url}`}>
                                         <div className="m-5 p-10 border rounded-lg bg-stone-200 hover:shadow-2xl hover:opacity-75 hover:scale-110 duration-300">
-                                            
+
                                             <div className="text-lg lg:text-2xl xl:text-xl border-b flex items-center justify-center">
                                                 <div className="flex">
                                                     {element.name}
@@ -210,7 +211,8 @@ export default function Timeline() {
                                                 })}
                                             </div>
                                         </div>
-                                    </a>
+                                        </a>
+                                    </div>
                                 );
                             })}
                             </div>
