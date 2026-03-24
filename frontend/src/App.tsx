@@ -35,7 +35,7 @@ export default function App() {
             onClick={copyEmail}
             className="text-blue-800/70 hover:text-blue-950 transition-colors  cursor-pointer"
           >
-            {copied ? 'Copied!' : 'curtischang@proton.me'}
+            {copied ? 'curtischang@proton.me (copied)' : 'curtischang@proton.me'}
           </button>
         </div>
 
