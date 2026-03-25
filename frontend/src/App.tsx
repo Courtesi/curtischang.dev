@@ -11,7 +11,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-stone-100 text-stone-900">
-      <div className="max-w-2xl pl-[10%] pt-30 pb-24">
+      <div className="max-w-4xl px-[10%] pt-30 pb-24">
         <h1 className="text-5xl font-[Brawler] text-blue-950 tracking-tight">Curtis Chang</h1>
 
         <div className="flex flex-wrap items-center gap-5 mt-6 text-sm font-[Urbanist]">
