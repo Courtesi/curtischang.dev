@@ -41,17 +41,21 @@ export default function App() {
 
         <div className="mt-20 space-y-8 font-[Urbanist] text-xl text-blue-950/80 leading-relaxed">
           <p>
-            I'm currently working on my startup <a href="https://trueshotodds.com" target="_blank" rel="noopener noreferrer" className="text-stone-900 font-medium hover:underline">TrueShotOdds</a>, a web app that helps smart bettors find
-			profitable bets across prediction markets and sportsbooks. I am currently based in California, USA.
+            I'm currently working on my startup <a href="https://trueshotodds.com" target="_blank" rel="noopener noreferrer" className="text-stone-900 font-medium hover:underline">TrueShotOdds</a>,
+			a web app that helps smart bettors find profitable bets across prediction markets and sportsbooks. I'm documenting my journey as a founder through 
+			<a href="https://www.youtube.com/@TrueShotOdds" target="_blank" rel="noopener noreferrer" className="text-stone-900 font-medium hover:underline">YouTube</a>
+			through a weekly series that takes you through my founding process. As of now, I am based in California.
           </p>
           <p>
             I have a few years of experience as a software engineer, having worked across full-stack
             development, automation, and data tooling in a variety of industries. I graduated from
             UC Irvine with a B.S. in Computer Science and also hold a CompTIA Security+ certification.
+			I'm an avid homelabber, where I mainly dive into self-hosting useful QoL services that I would
+			otherwise have to pay a subscription for.
           </p>
           <p>
-            My current interests are poker, working out, running, and snowboarding (catch me at Mammoth during the season). I also enjoy learning Chinese
-			and Japanese.
+            Apart from my startup and homelabbing, I'm interested in poker, working out, running, and snowboarding (catch me at Mammoth and Big Bear during the season). I also enjoy learning Chinese
+			and Japanese through media, songs, and studying.
           </p>
         </div>
 
