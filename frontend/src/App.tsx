@@ -41,10 +41,10 @@ export default function App() {
 
         <div className="mt-20 space-y-8 font-[Urbanist] text-xl text-blue-950/80 leading-relaxed">
           <p>
-            I'm currently working on my startup <a href="https://trueshotodds.com" target="_blank" rel="noopener noreferrer" className="text-stone-900 font-medium hover:underline">TrueShotOdds</a>,
+            I'm currently California-based, working on my startup <a href="https://trueshotodds.com" target="_blank" rel="noopener noreferrer" className="text-stone-900 font-medium hover:underline">TrueShotOdds</a>,
 			a web app that helps smart bettors find profitable bets across prediction markets and sportsbooks.
 			I'm documenting my journey as a founder through <a href="https://www.youtube.com/@TrueShotOdds" target="_blank" rel="noopener noreferrer" className="text-stone-900 font-medium hover:underline">YouTube</a>,
-			a weekly series that takes you through my founding process. As of now, I am based in California.
+			a weekly series that takes you through my founding process.
           </p>
           <p>
             I have a few years of experience as a software engineer, having worked across full-stack
