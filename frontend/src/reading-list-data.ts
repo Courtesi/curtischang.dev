@@ -19,5 +19,11 @@ export const readingList: ReadingListEntry[] = [
     url: 'https://www.si.com/prediction-markets/usa/california',
     dateRead: '2026-09-01',
     type: 'Article'
+  },
+  {
+    title: 'Removing Personal Information (PII) from Sentry Error Monitoring in JavaScript',
+    url: 'https://advena.hashnode.dev/removing-personal-information-pii-from-sentry-error-monitoring-in-javascript',
+    dateRead: '2026-08-31',
+    type: 'Guide'
   }
 ]
