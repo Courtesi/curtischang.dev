@@ -14,4 +14,10 @@ export const readingList: ReadingListEntry[] = [
     dateRead: '2026-09-04',
     type: 'Guide'
   },
+  {
+    title: 'California Sports Betting: Best Prediction Markets and DFS Options',
+    url: 'https://www.si.com/prediction-markets/usa/california',
+    dateRead: '2026-09-01',
+    type: 'Article'
+  }
 ]
