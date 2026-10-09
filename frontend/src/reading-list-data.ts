@@ -25,5 +25,11 @@ export const readingList: ReadingListEntry[] = [
     url: 'https://advena.hashnode.dev/removing-personal-information-pii-from-sentry-error-monitoring-in-javascript',
     dateRead: '2026-08-31',
     type: 'Guide'
+  },
+  {
+    title: 'Separating Workers From My API Created a Deployment Problem',
+    url: 'https://www.parveenkumar.info/blog/worker-architecture-deployment-problem',
+    dateRead: '2026-09-05',
+    type: 'Walkthrough'
   }
 ]
